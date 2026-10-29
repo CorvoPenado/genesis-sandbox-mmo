@@ -40,6 +40,7 @@
 - [5. Tech Stack Verificada](#5-tech-stack-verificada)
 - [6. Estado de Maturidade e Limitações Conhecidas](#6-estado-de-maturidade-e-limitações-conhecidas)
 - [7. Natureza Proprietária e Segurança](#7-natureza-proprietária-e-segurança)
+- [8. Conecte-se e Jogue](#8-conecte-se-e-jogue)
 
 ---
 
@@ -123,19 +124,19 @@ flowchart TD
         Flyway["Flyway Migrations Engine<br/>(V1__ a V17__)"]
     end
 
-    User <-->|Pacotes UDP de Sincronização| Network
+    User <-->|"Pacotes UDP de Sincronização"| Network
     Network <--> TickLoop
     TickLoop <--> AMX
     AMX <--> Logic
 
-    Gathering <-->|Consultas O(1) via Dynamic Areas| Streamer
-    Zoning <-->|Polígonos Espaciais| Streamer
-    Gathering <-->|Raycast de Terreno| ColAndreas
+    Gathering <-->|"Consultas O(1) via Dynamic Areas"| Streamer
+    Zoning <-->|"Polígonos Espaciais"| Streamer
+    Gathering <-->|"Raycast de Terreno"| ColAndreas
 
-    Logic <-->|Sem Queries SQL Diretas| DAO
-    DAO -->|Query Assíncrona Não-Bloqueante| MySQLPlugin
-    MySQLPlugin <-->|Conexão TCP / Pool| DB
-    Flyway -.->|Versionamento e Migrações| DB
+    Logic <-->|"Sem Queries SQL Diretas"| DAO
+    DAO -->|"Query Assíncrona Não-Bloqueante"| MySQLPlugin
+    MySQLPlugin <-->|"Conexão TCP / Pool"| DB
+    Flyway -.->|"Versionamento e Migrações"| DB
 ```
 
 ### 2.3. Diagrama de Sequência: Persistência Reativa Anti-Rollback
@@ -537,6 +538,29 @@ O software original opera em regime proprietário (*closed-source*). Em conformi
 - Os trechos presentes na seção [Demonstração de Código](#4-demonstração-de-código-proofs-of-concept) e na pasta [`snippets/`](./snippets) constituem **Provas de Conceito (PoCs) isoladas e sanitizadas**, elaboradas estritamente para comprovar a eficácia dos padrões arquiteturais sem reproduzir o código-fonte integral do produto.
 - Todas as chaves criptográficas, credenciais de conexão, senhas de administração RCON e endereços de rede privados foram rigorosamente omitidos.
 - Os modelos e conceitos apresentados baseiam-se em evidências concretas de engenharia e benchmarks do ecossistema open.mp.
+
+---
+
+## 8. Conecte-se e Jogue
+
+Experimente a arquitetura e os sistemas em execução diretamente no ambiente de testes:
+
+<div align="center">
+
+### 🌐 Endereço do Servidor
+
+```text
+190.102.40.7:7821
+```
+
+[![Cliente SA-MP](https://img.shields.io/badge/Cliente%20Recomendado-SA--MP%200.3.7--R2-00599E?style=for-the-badge&logo=samp)](https://sa-mp.mp/)
+[![Compatibilidade open.mp](https://img.shields.io/badge/Compat%C3%ADvel-SA--MP%200.3.7--R5%20%2F%20open.mp-FF8C00?style=for-the-badge)](https://open.mp/)
+
+<p>
+  💡 <i>Copie o IP no botão de cópia do bloco acima e adicione aos <b>Favoritos</b> no cliente <b>SA-MP 0.3.7-R2</b> (ou clientes compatíveis 0.3.7-R5 / open.mp launcher).</i>
+</p>
+
+</div>
 
 ---
 
